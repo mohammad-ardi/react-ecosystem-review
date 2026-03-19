@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "name": "Basic Plan",
+    "price": 20,
+    "duration": "month",
+    "features": [
+      "Access to gym equipment",
+      "Locker room access",
+      "1 free fitness assessment"
+    ],
+    "popular": false
+  },
+  {
+    "id": 2,
+    "name": "Standard Plan",
+    "price": 40,
+    "duration": "month",
+    "features": [
+      "Everything in Basic",
+      "Group classes (yoga, cardio)",
+      "2 personal training sessions"
+    ],
+    "popular": true
+  },
+  {
+    "id": 3,
+    "name": "Premium Plan",
+    "price": 70,
+    "duration": "month",
+    "features": [
+      "Everything in Standard",
+      "Unlimited personal training",
+      "Sauna & spa access",
+      "Nutrition consultation"
+    ],
+    "popular": false
+  }
+]

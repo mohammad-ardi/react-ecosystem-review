@@ -37,6 +37,7 @@ const navItems = [
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
+    const links = navItems.map((item)=> <Links key={item.id} item={item}></Links>);
 
     return ( 
         <div className="flex justify-between mx-10">
@@ -44,11 +45,17 @@ const Navbar = () => {
                 {
                     open ? <X></X> : <Menu className="md:hidden"></Menu>
                 }
+                <ul className=
+                    {`md:hidden absolute duration-1000 bg-amber-300 rounded-md text-black
+                        ${open ? 'top-8' : '-top-40'}
+                    `}>
+                    {links}
+                </ul>
                 <h1>My Page</h1>
             </span>
             <ul className="md:flex hidden">
                 {
-                    navItems.map((item)=> <Links key={item.id} item={item}></Links>)
+                    links
                 }
             </ul>
             <button className="btn">Sign In</button>
