@@ -1,7 +1,7 @@
 const Links = ({item}) => {
     return ( 
         <div>
-            <li>
+            <li className="mr-10">
                 <a href={item.path}>{item.label}</a>
             </li>
         </div>

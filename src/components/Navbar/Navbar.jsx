@@ -1,4 +1,6 @@
+import { Menu, X } from "lucide-react";
 import Links from "./Links";
+import { useState } from "react";
 
 const navItems = [
   {
@@ -34,14 +36,25 @@ const navItems = [
 ];
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
+
     return ( 
-        <div>
-            <ul>
+        <div className="flex justify-between mx-10">
+            <span onClick={()=> {setOpen(!open)}}>
+                {
+                    open ? <X></X> : <Menu className="md:hidden"></Menu>
+                }
+                <h1>My Page</h1>
+            </span>
+            <ul className="md:flex hidden">
                 {
                     navItems.map((item)=> <Links key={item.id} item={item}></Links>)
                 }
             </ul>
+            <button className="btn">Sign In</button>
         </div>
+
+        // daisy khala version
         // <div className="navbar bg-base-100 shadow-sm">
         //     <div className="navbar-start">
         //         <div className="dropdown">
