@@ -1,5 +1,28 @@
-import { BarChart, Line, LineChart, XAxis, YAxis } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  LineChart,
+  Line
+} from 'recharts';
 
+import CustomTooltip2 from "../CustomTooltip/CustomTooltip";
+const CustomTooltip = ({ active, payload, label }) => {
+    if(active && payload.length && label){
+    return ( 
+        <div>
+            <p><strong>{label}</strong></p>
+            <p>Physics: {payload[0].value}</p>
+            <p>Chemistry: {payload[1].value}</p>
+            <p>Math: {payload[2].value}</p>
+        </div>
+     );
+    }
+}
 const ResultsChart = () => {
     const resultData = [
   {
@@ -86,6 +109,31 @@ const ResultsChart = () => {
                 <YAxis
                     dataKey='math'
                 ></YAxis>
+            </BarChart>
+
+            {/* tooltip */}
+            <BarChart
+              style={{
+                width:'80%',
+                maxWidth:'600px',
+                minHeight:'70vh'
+              }}
+              data={resultData}
+            >
+            <CartesianGrid strokeDasharray={'3 3'}></CartesianGrid>
+            <XAxis
+                dataKey='name'
+            ></XAxis>
+            <YAxis
+                dataKey='math'
+            ></YAxis>
+            <Tooltip content={<CustomTooltip2 />} />
+            <Legend></Legend>
+
+            <Bar dataKey="physics" fill="#8884d8" />
+            <Bar dataKey="chemistry" fill="#82ca9d" />
+            <Bar dataKey="math" fill="#ffc658" />
+
             </BarChart>
         </div>
      );

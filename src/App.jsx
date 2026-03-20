@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import PricingOption from './components/pricingOption/pricingOption';
 import ResultsChart from './components/ResultsChart/ResultsChart';
+import CustomTooltip from './components/CustomTooltip/CustomTooltip';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
       <PricingOption pricingPromise={pricingPromise}></PricingOption>
     </Suspense>
 
-    <ResultsChart></ResultsChart>
+    <ResultsChart ></ResultsChart>
     </>
   )
 }
