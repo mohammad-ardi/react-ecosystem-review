@@ -109,6 +109,9 @@ const ResultsChart = () => {
                 <YAxis
                     dataKey='math'
                 ></YAxis>
+                <Bar dataKey="physics" fill="#8884d8" />
+                <Bar dataKey="chemistry" fill="#82ca9d" />
+                <Bar dataKey="math" fill="#ffc658" />
             </BarChart>
 
             {/* tooltip */}
